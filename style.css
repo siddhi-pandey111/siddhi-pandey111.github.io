@@ -71,7 +71,7 @@ svg{display:block;width:100%}
 /* Home hero */
 .dark-stage{background:var(--midnight);color:#f4f3e9;position:relative}
 .dark-stage::before{content:'';position:absolute;inset:0;opacity:.23;pointer-events:none;background:radial-gradient(ellipse at 75% 45%,#496357 0%,transparent 46%)}
-.hero{padding-top:79px}
+.hero{padding-block:79px}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:78px;align-items:center;position:relative;z-index:1}
 .hero-intro{padding-bottom:30px}
 .eyebrow-inverse{color:#c8d6c5;display:flex;align-items:center;gap:12px}
@@ -166,7 +166,7 @@ svg{display:block;width:100%}
 .end-grid p{color:var(--muted);font-size:14px;line-height:1.75;margin:0 0 23px}
 .site-footer{background:var(--midnight);color:#f3f5eb}
 .footer-wrap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px;padding-top:65px}
-.footer-name{font-family:var(--display);font-size:72px;letter-spacing:-.12em;line-height:.9;font-weight:600}
+.footer-name{font-family:var(--display);font-size:clamp(24px,3vw,40px);letter-spacing:-.025em;line-height:1.15;font-weight:600}
 .footer-name span{font-size:28px;color:var(--coral);margin-left:9px;vertical-align:top}
 .footer-wrap>p{font-size:14px;line-height:1.75;color:#bacac0;margin:0}
 .footer-links{display:flex;flex-direction:column;align-items:flex-end;gap:12px;font-size:12px;color:#d3dfd4}
@@ -373,7 +373,7 @@ svg{display:block;width:100%}
  .footer-bottom{margin-top:18px;flex-wrap:wrap;line-height:1.6}
  .footer-bottom span:nth-child(2){display:none}
  .subpage-hero{padding-top:47px;padding-bottom:62px}
- .subpage-topline>span:last-child{display:none}
+ .subpage-topline>span:nth-child(2){display:none}
  .subpage-headline{grid-template-columns:1fr;gap:22px;padding-top:42px}
  .subpage-headline h1{font-size:clamp(57px,11vw,88px)}
  .subpage-headline>p{font-size:14px;max-width:100%}
@@ -439,4 +439,4 @@ body{line-height:1.55}
 .statement-large{letter-spacing:-.028em}
 .project-copy h3,.research-item h3,.publication-row h3,.publication-detail h3,
 .timeline-item h3,.beyond-card h3{letter-spacing:-.018em}
-.footer-name{letter-spacing:-.065em}
+.footer-name{letter-spacing:-.025em}
