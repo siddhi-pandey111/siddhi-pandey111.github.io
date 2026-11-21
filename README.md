@@ -3,8 +3,8 @@
 A responsive, three-page, GitHub Pages–ready academic/research portfolio. Built with **plain HTML, CSS and JavaScript**; no build tools, no dependencies, no login and no backend required.
 
 ## Pages
-- `index.html` — homepage, featured projects, selected publications, human side and contact
-- `research.html` — four research summaries, interactive published/ongoing filters, two verified journal publications with DOI links
+- `index.html` — homepage, featured projects, human side and contact
+- `research.html` — four research summaries with DOI links and interactive published/ongoing filters
 - `about.html` — background, timeline, methods/tools and space for non-academic projects
 - `style.css` — colors, fonts, layouts, animations, mobile design
 - `script.js` — accessible mobile navigation, research filters and optional scroll reveals
@@ -27,7 +27,6 @@ All website links to local files use relative paths and work in either setup.
 - **Add a CV**: place a PDF in `assets/`, then add a link to it in the navigation or About page. No fake CV PDF link is included.
 - **Beyond the CV** is intentionally reserved for your personal projects, travel notes, essays, photography, and other interests. No personal interests are invented or presented as facts.
 - The abstract illustrations are **conceptual design graphics, not research plots**. Replace them with your figures when you want to share actual results (and have permission to do so).
-- Add more publication rows when you have verified titles, journals and DOI links. Do not reuse page numbers from unverified sources.
 - Remove the optional link to your previous Google Site in the footer when you no longer need it.
 
 ## Source checks used for the initial content
