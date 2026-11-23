@@ -1,13 +1,13 @@
 # Siddhi Pandey
 
-A responsive, three-page, GitHub Pages–ready academic/research portfolio. Built with **plain HTML, CSS and JavaScript**; no build tools, no dependencies, no login and no backend required.
+A responsive, GitHub Pages–ready academic/research portfolio. Built with **plain HTML, CSS and JavaScript**; no build tools, no dependencies, no login and no backend required.
 
 ## Pages
-- `index.html` — homepage, featured projects, human side and contact
-- `research.html` — Research summaries with DOI links and interactive published/ongoing filters
-- `about.html` — background, timeline, methods/tools and space for non-academic projects
+- `index.html` — homepage, introduction, research interests and education
+- `research.html` — four research topic panels with introductions, project details and DOI links
+- `about.html` — background, professional experience, work-image carousel and methods/tools
 - `style.css` — colors, fonts, layouts, animations, mobile design
-- `script.js` — accessible mobile navigation, research filters and optional scroll reveals
+- `script.js` — accessible mobile navigation, topic and photo dialogs, carousel controls and optional scroll reveals
 - `assets/favicon.svg` — tab icon
 
 
@@ -23,3 +23,10 @@ The web font is requested from jsDelivr via
 The font is hosted externally rather than bundled inside this package;
 when offline, the browser will use Georgia or another available serif fallback.
 The small monospace labels inside technical diagrams intentionally remain monospace.
+
+## Research and photography pages
+- `beyond.html` — photography gallery and the quote from the previous Hobbies page
+- `machine-learning.html`, `multi-hazard.html`, `system-identification.html`, `computational-modeling.html` — standalone versions of the research panels
+- `assets/gallery/` — local copies of selected photographs and work images from the previous website
+
+To edit research text, update both its standalone page and its dialog in `research.html`. Journal papers are distinguished from ongoing research and coursework. Image captions and roles come from the old site's Professional Experiences page; no dates or locations were invented.
