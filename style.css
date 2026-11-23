@@ -598,3 +598,13 @@ body{line-height:1.55}
 @media(max-width:760px){.topic-grid{gap:16px}.topic-card{padding:24px}.topic-card h2{font-size:25px}.photo-grid{columns:2}.carousel-slide img{height:320px}}
 @media(max-width:520px){.education-row{grid-template-columns:1fr;gap:8px}.topic-grid{grid-template-columns:1fr}.page-intro{padding-top:35px}.topic-dialog{padding-inline:20px}.topic-header h1,.topic-header>h2{font-size:30px}.photo-grid{columns:1}.carousel-slide img{height:260px}.work-carousel{padding:12px}.carousel-controls button{padding:10px}.photo-quote{padding-left:18px}.photo-quote p{font-size:24px}}
 @media(prefers-reduced-motion:reduce){.photo-tile img,.topic-card{transition:none}}
+
+/* Uncropped source illustrations for the ongoing fire-damage study. */
+.fire-illustrations{margin-top:28px}
+.fire-context-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.fire-illustrations figure{margin:0 0 24px;min-width:0}
+.fire-illustrations img{display:block;width:100%;height:auto;background:var(--paper-2)}
+.fire-illustrations figcaption{font-size:14px;line-height:1.7;margin-top:10px;color:var(--ink-2)}
+.topic-body .figure-sources{font-size:12px;line-height:1.7;margin:0 0 24px;color:var(--muted)}
+.figure-sources a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:520px){.fire-context-grid{grid-template-columns:1fr;gap:0}}
