@@ -29,3 +29,58 @@
     document.querySelectorAll('.reveal').forEach(el => { el.classList.add('will-reveal'); observer.observe(el); });
   }
 })();
+
+// Topic pages also work as ordinary links when JavaScript is unavailable.
+(() => {
+  const openDialog = (dialog, trigger) => {
+    if (!dialog || typeof dialog.showModal !== 'function') return false;
+    dialog.returnFocus = trigger;
+    dialog.showModal();
+    document.documentElement.classList.add('dialog-open');
+    return true;
+  };
+  document.querySelectorAll('[data-topic]').forEach(link => {
+    link.addEventListener('click', event => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      if (openDialog(document.getElementById(`dialog-${link.dataset.topic}`), link)) event.preventDefault();
+    });
+  });
+  const photoDialog = document.querySelector('.photo-dialog');
+  document.querySelectorAll('[data-photo]').forEach(link => link.addEventListener('click', event => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || !photoDialog) return;
+    const image = photoDialog.querySelector('img');
+    image.src = link.href;
+    image.alt = link.querySelector('img').alt;
+    if (openDialog(photoDialog, link)) event.preventDefault();
+  }));
+  document.querySelectorAll('dialog').forEach(dialog => {
+    dialog.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => {
+      const bounds = dialog.getBoundingClientRect();
+      if (event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) dialog.close();
+    });
+    dialog.addEventListener('close', () => {
+      document.documentElement.classList.remove('dialog-open');
+      dialog.returnFocus?.focus();
+    });
+  });
+  document.querySelectorAll('.work-carousel').forEach(carousel => {
+    const slides = [...carousel.querySelectorAll('.carousel-slide')];
+    const controls = carousel.querySelector('.carousel-controls');
+    let current = 0;
+    const show = index => {
+      current = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => { slide.hidden = i !== current; });
+      carousel.querySelector('.carousel-position').textContent = `${current + 1} / ${slides.length}`;
+    };
+    controls.hidden = false;
+    controls.querySelectorAll('[data-slide]').forEach(button => button.addEventListener('click', () => show(current + Number(button.dataset.slide))));
+    carousel.addEventListener('keydown', event => {
+      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+        event.preventDefault();
+        show(current + (event.key === 'ArrowRight' ? 1 : -1));
+      }
+    });
+    show(0);
+  });
+})();
